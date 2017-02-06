@@ -1,0 +1,113 @@
+.fondo_tablero {
+  background-image: url(../images/campo.jpg);
+  background-position: left top;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 600px;
+  border: black solid 3px;
+  border-radius: 9px; }
+
+.line {
+  border: 1px solid black; }
+
+.hueco_tablero {
+  width: 200px;
+  height: 400px;
+  position: relative; }
+
+.palo {
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  bottom: 0; }
+
+.palo_potencia_floja {
+  animation: swing 3s; }
+
+.palo_potencia_optima {
+  animation: swing 2s; }
+
+.palo_potencia_fuerte {
+  animation: swing 0.75s; }
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(90deg); }
+  100% {
+    transform: rotate(-50deg); } }
+
+.bola {
+  position: absolute;
+  bottom: 30px;
+  right: 70px; }
+
+.bola_potencia_fuerte {
+  animation: desplazamiento_fuerte 2s;
+  animation-delay: 0.7s; }
+
+@keyframes desplazamiento_fuerte {
+  0% {
+    right: 70px;
+    bottom: 30px; }
+  100% {
+    right: -1000px;
+    bottom: 900px; } }
+
+.bola_potencia_optima {
+  animation: desplazamiento_optimo 2s;
+  animation-delay: 1.7s; }
+
+@keyframes desplazamiento_optimo {
+  0% {
+    right: 70px;
+    bottom: 30px; }
+  80% {
+    right: -355px;
+    bottom: 170px;
+    opacity: 1; }
+  100% {
+    right: -355px;
+    bottom: 170px;
+    opacity: 0; } }
+
+.bola_potencia_floja {
+  animation: desplazamiento_flojo 2s;
+  animation-delay: 2.7s; }
+
+@keyframes desplazamiento_flojo {
+  0% {
+    right: 70px;
+    bottom: 30px; }
+  100% {
+    right: -100px;
+    bottom: 90px; } }
+
+.caja {
+  border: solid black 3px;
+  border-radius: 9px;
+  background-color: #ADED73; }
+
+.hueco_caja {
+  width: 100px;
+  height: 200px; }
+
+.barra {
+  height: 10px; }
+
+.barra_potencia {
+  animation: potencia 4s infinite; }
+
+@keyframes potencia {
+  0% {
+    width: 10px;
+    background-color: greenyellow; }
+  35% {
+    background-color: yellow; }
+  50% {
+    width: 600px;
+    background-color: red; }
+  100% {
+    width: 10px;
+    background-color: greenyellow; } }

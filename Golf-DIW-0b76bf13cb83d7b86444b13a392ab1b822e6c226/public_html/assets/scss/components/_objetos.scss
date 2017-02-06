@@ -1,0 +1,98 @@
+.palo{
+    width: 100px;
+    height:200px;
+    position: absolute;
+    bottom: 0;
+}
+
+.palo_potencia_floja{
+    animation: swing 3s;
+}
+.palo_potencia_optima{
+    animation: swing 2s;
+}
+.palo_potencia_fuerte{
+    animation: swing 0.75s;
+}
+
+@keyframes swing{
+    0% {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(90deg);
+    }
+    100%{
+        transform: rotate(-50deg);
+    }
+
+}
+
+.bola{
+    position: absolute;
+    bottom: 30px;
+    right: 70px;
+}
+
+.bola_potencia_fuerte{
+      animation: desplazamiento_fuerte 2s;
+      animation-delay: 0.7s;
+    
+}
+
+@keyframes desplazamiento_fuerte{
+    0% {
+        right:70px;
+        bottom: 30px;
+    }
+    100% {
+        right: -1000px;
+        bottom: 900px;
+    }
+}
+
+.bola_potencia_optima{
+      animation: desplazamiento_optimo 2s;
+      animation-delay: 1.7s;
+    
+}
+
+@keyframes desplazamiento_optimo{
+    0% {
+        right:70px;
+        bottom: 30px;
+    }
+    
+    80% {
+        right: -355px;
+        bottom: 170px;
+        opacity: 1;
+    }
+    100% {
+        right: -355px;
+        bottom: 170px; 
+        opacity: 0;
+    }
+    
+}
+
+.bola_potencia_floja{
+      animation: desplazamiento_flojo 2s;
+      animation-delay: 2.7s;
+    
+}
+
+@keyframes desplazamiento_flojo{
+    0% {
+        right:70px;
+        bottom: 30px;
+    }
+    100% {
+        right: -100px;
+        bottom: 90px;
+    }
+}
+
+
+
+
