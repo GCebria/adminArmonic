@@ -12,17 +12,25 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
+    $(".palo").addClass("colocado");
+    $(".bola").addClass("colocada");
 }
 
 function lanzarPelota() {
-    var tamanyoBarra = document.getElementById("barra_potencia").offsetWidth;
+    if($(".palo").hasClass("colocado")&& $(".bola").hasClass("colocada")) {
+     var tamanyoBarra = document.getElementById("barra_potencia").offsetWidth;
     var colorBarra = $("#barra_potencia").css("background-color");
 
     var potencia = tamanyoBarra / 60;
     potencia = potencia.toFixed(0);
     calcularPotencia(potencia);
 
-    establecerBarra(tamanyoBarra, colorBarra);
+    establecerBarra(tamanyoBarra, colorBarra);   
+    }else{
+        $('#modalError').modal();
+    }
+    
+    
 }
 function calcularPotencia(potencia) {
     if (potencia > 8) {
@@ -45,7 +53,7 @@ function tiroOptimo() {
     $(".bola").addClass("bola_potencia_optima");
     setTimeout(function () {
         $('#modalVictoria').modal();
-    }, 4000)
+    }, 4000);
 }
 function tiroFlojo() {
     $(".palo").addClass("palo_potencia_floja");
@@ -69,7 +77,9 @@ function darPotencia() {
 
 function devolverObjetos() {
     $('.palo').appendTo(".hueco_palo");
+    $('.palo').removeClass("colocado");
     $('.bola').appendTo(".hueco_bola");
+    $('.bola').removeClass("colocada");
 }
 
 function instrucciones(){
