@@ -7,7 +7,7 @@ $(document).ready(function(){
                     colNames:['Id','Usuario','Descripcion', 'Horas','Estado'],
                     colModel:[
                         {name:'id', index:'id', width:50},
-						{name:'usuario', index:'usuario', width:100},
+                        {name:'usuario', index:'usuario', width:100},
                         {name:'descripcion', index:'descripcion', width:250},
                         {name:'horas', index:'horas', width:70, align:"right"},
                         {name:'estado', index:'estado', width:100},
@@ -18,7 +18,7 @@ $(document).ready(function(){
                     sortname: 'id',
                     sortorder: 'asc',
                     viewrecords: true,
-                    caption: 'Listado de Tareas'
+                    caption: 'PRODUCTOS'
                 });              
             
 			$('#logoutBT').on("click",logout);

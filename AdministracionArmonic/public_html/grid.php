@@ -11,9 +11,10 @@ if (!$sidx) {
     $sidx = 1;
 };
 
-$db = mysql_connect("localhost", "root", "") or die("Connection Error: " . mysql_error());
+
+$db = mysql_connect("localhost", "root", "root") or die("Connection Error: " . mysql_error());
 mysql_select_db("armonic") or die("Error conecting to db.");
-printf($db);
+
 
 $result = mysql_query("SELECT COUNT(*) AS count FROM productos");
 
@@ -30,7 +31,8 @@ if ($page > $total_pages)
 
 $start = $limit * $page - $limit;
 
-$SQL = "SELECT * FROM productos ORDER BY $sidx $sord LIMIT $start , $limit;";
+$SQL = "SELECT * FROM productos ORDER BY $sidx $sord  LIMIT $start , $limit";
+echo $SQL;
 $result = mysql_query($SQL) or die("Couldn t execute query." . mysql_error());
 
 
