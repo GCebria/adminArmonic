@@ -40,7 +40,7 @@ error_reporting(0);
     $respuesta->records = $count;
     $i=0;
     while( $fila = $result->fetch_assoc() ) {
-        $respuesta->rows[$i]['id']=$fila["idCliente"];
+        $respuesta->rows[$i]['id']=$fila["id"];
        $respuesta->rows[$i]['cell'] = array($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['imagenes'], $fila['videos'], $fila['idCategoria']);
 
         $i++;
