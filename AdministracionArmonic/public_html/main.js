@@ -1,16 +1,18 @@
 $(document).ready(function(){
 			$("#dialog").hide();
            jQuery("#tbltareas").jqGrid({
-                    url:'lista_tareas.php',
+                    url:'productos.php',
                     datatype: 'json',
                     mtype: 'POST',
-                    colNames:['Id','Usuario','Descripcion', 'Horas','Estado'],
+                    colNames:['Id','Nombre','Descripcion', 'Precio','Imagenes', 'Videos', 'idCategoria'],
                     colModel:[
                         {name:'id', index:'id', width:50},
-                        {name:'usuario', index:'usuario', width:100},
+                        {name:'nombre', index:'nombre', width:100},
                         {name:'descripcion', index:'descripcion', width:250},
-                        {name:'horas', index:'horas', width:70, align:"right"},
-                        {name:'estado', index:'estado', width:100},
+                        {name:'precio', index:'precio', width:70, align:"right"},
+                        {name:'imagenes', index:'imagenes', width:100},
+                        {name:'videos', index:'videos', width:100},
+                        {name:'idCategoria', index:'idCategoria', width:100}
                         ],
                     pager: '#paginacion',
                     rowNum:10,
@@ -29,5 +31,5 @@ $(document).ready(function(){
 							//Codigo para añadir una nueva tarea
 				
 				}); //fin btn_nuevo
-    			
+//    			
 		}); // fin ready
